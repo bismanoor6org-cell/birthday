@@ -11,14 +11,22 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body {
   font-family: var(--sans);
   background: var(--midnight);
   color: var(--ivory);
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   line-height: 1.55;
   font-weight: 300;
+  overscroll-behavior-x: none;
 }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -953,15 +961,23 @@ body.letter-open { overflow: hidden; }
 @media (max-width: 900px) {
   .story-bg-left { width: 100%; opacity: 0.55; }
   .story-bg-right { width: 100%; opacity: 0.35; }
-  .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .story-grid { grid-template-columns: 1fr; gap: 2.5rem; max-width: 100%; }
+  .story-wrap { width: min(1180px, calc(100% - 1.5rem)); max-width: 100%; overflow-x: hidden; }
   .story-left { min-height: auto; justify-content: center; }
-  .story-head { text-align: center; max-width: none; }
+  .story-head { text-align: center; max-width: 100%; }
+  .story-head .script-title { white-space: normal; }
   .story-head .sub { text-align: center; }
   .story-right {
     min-height: 340px;
     margin: 0 auto;
-    width: min(320px, 100%);
+    width: min(300px, 92vw);
+    max-width: 100%;
+    overflow: hidden;
   }
+  .story-poli { width: min(148px, 42%); }
+  .story-poli.sp1 { left: 2%; }
+  .story-poli.sp2 { right: 2%; }
+  .story-poli.sp3 { left: 16%; }
 }
 
 /* WISH — wide split banner like reference */
@@ -1237,22 +1253,32 @@ body.letter-open { overflow: hidden; }
     min-height: 560px;
     justify-items: center;
     text-align: center;
+    overflow: hidden;
   }
   .forever-inner {
     margin-left: 0;
+    margin-right: 0;
+    max-width: min(34rem, calc(100% - 2rem));
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-align: center;
   }
   .forever-media { background-position: 40% center; }
   .heart-stars {
     top: 6%;
-    right: 8%;
+    right: 4%;
     left: auto;
+    max-width: 30vw;
   }
-  .heart-full { font-size: 3.8rem; }
+  .heart-full { font-size: clamp(2.8rem, 18vw, 3.8rem); }
   .forever-shade {
     background:
       linear-gradient(180deg, rgba(8,4,16,.55), rgba(8,4,16,.35) 40%, rgba(8,4,16,.7));
   }
+  .nav { max-width: 100%; overflow: hidden; }
+  .sec-wrap { width: min(1120px, calc(100% - 1.5rem)); max-width: 100%; }
+  .reasons-grid { max-width: 100%; }
+  .polaroids { max-width: 100%; }
 }
 
 .site-foot {
