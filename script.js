@@ -253,21 +253,13 @@ Happy Birthday, Jan`,
     if (e.key === "Escape" && !letterModal.hidden) closeLetterModal();
   });
 
-  // Memories lightbox — desktop only (no fullscreen on mobile)
-  function isMobileView() {
-    return window.matchMedia("(max-width: 820px)").matches;
-  }
-  polaroids.querySelectorAll(".poli-img img").forEach((img) => {
-    img.addEventListener("click", () => {
-      if (isMobileView()) return;
-      lbImg.src = img.currentSrc || img.src;
-      lightbox.hidden = false;
+  // Memories: no fullscreen lightbox (same as journey polaroids)
+  if (lbClose) lbClose.addEventListener("click", () => (lightbox.hidden = true));
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) lightbox.hidden = true;
     });
-  });
-  lbClose.addEventListener("click", () => (lightbox.hidden = true));
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) lightbox.hidden = true;
-  });
+  }
 
   // Reasons reveal
   const rCards = document.querySelectorAll(".r-card");
