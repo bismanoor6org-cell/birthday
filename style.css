@@ -585,6 +585,10 @@ body.letter-open { overflow: hidden; }
 }
 .tape.t-tl { top: -6px; left: 18px; }
 .tape.t-tr { top: -4px; right: 18px; transform: rotate(16deg); }
+@media (max-width: 820px) {
+  .memories-sec .poli-img { cursor: default; }
+  .memories-sec .poli:hover .poli-img img { transform: none; }
+}
 @media (max-width: 700px) {
   .memories-head { text-align: center; }
   .polaroids {

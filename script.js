@@ -253,9 +253,13 @@ Happy Birthday, Jan`,
     if (e.key === "Escape" && !letterModal.hidden) closeLetterModal();
   });
 
-  // Memories lightbox
+  // Memories lightbox — desktop only (no fullscreen on mobile)
+  function isMobileView() {
+    return window.matchMedia("(max-width: 820px)").matches;
+  }
   polaroids.querySelectorAll(".poli-img img").forEach((img) => {
     img.addEventListener("click", () => {
+      if (isMobileView()) return;
       lbImg.src = img.currentSrc || img.src;
       lightbox.hidden = false;
     });
