@@ -31,7 +31,7 @@ Happy Birthday, Jan`,
       { icon: "🌙", date: "20–21 March 2026", caption: "Best Eid together." },
       { icon: "♡", date: "27 May 2026", caption: "Eid-ul-Adha with you." },
       { icon: "✨", date: "19 October 2026", caption: "Itni pareshani ke baad Lahore mein mile — best day." },
-      { icon: "📍", date: "29 November 2026", caption: "Pehli baar aap milne aaye — Rawalpindi." },
+      { icon: "📍", date: "29 August 2026", caption: "Pehli baar aap milne aaye — Rawalpindi." },
       { icon: "🎈", date: "Aapka Birthday", caption: "Aaj ka din mera favourite." },
     ],
   };
