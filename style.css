@@ -1214,21 +1214,23 @@ body.letter-open { overflow: hidden; }
   line-height: 1.45;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
-.forever-sign span {
-  display: inline-block;
-  margin-top: 0.2rem;
-  font-family: var(--script);
-  font-size: 1.85rem;
-  color: #f0d6a8;
-}
 .forever-extra {
-  margin-top: 1.1rem;
+  margin-top: 0.85rem;
   font-family: var(--serif);
   font-size: clamp(0.95rem, 2vw, 1.12rem);
   font-style: italic;
   color: rgba(244, 232, 223, 0.92);
   line-height: 1.55;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+.forever-name {
+  margin-top: 1.15rem;
+}
+.forever-name span {
+  display: inline-block;
+  font-family: var(--script);
+  font-size: 1.85rem;
+  color: #f0d6a8;
 }
 .heart-stars {
   position: absolute;
