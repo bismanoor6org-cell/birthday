@@ -1221,6 +1221,15 @@ body.letter-open { overflow: hidden; }
   font-size: 1.85rem;
   color: #f0d6a8;
 }
+.forever-extra {
+  margin-top: 1.1rem;
+  font-family: var(--serif);
+  font-size: clamp(0.95rem, 2vw, 1.12rem);
+  font-style: italic;
+  color: rgba(244, 232, 223, 0.92);
+  line-height: 1.55;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
 .heart-stars {
   position: absolute;
   top: 10%;
