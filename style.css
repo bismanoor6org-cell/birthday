@@ -1142,7 +1142,7 @@ body.letter-open { overflow: hidden; }
   justify-content: space-around;
   align-items: flex-end;
   transition: opacity 0.8s ease;
-  opacity: 0.45;
+  opacity: 0.95;
 }
 .candles.out { opacity: 0; }
 .flame {
