@@ -276,11 +276,53 @@ Happy Birthday, Jan`,
   );
   rCards.forEach((c) => rio.observe(c));
 
-  // Reasons flip cards
+  // Reasons flip cards — height hugs text (no empty space when open)
+  function fitFlippedCard(card) {
+    const back = card.querySelector(".r-back");
+    const p = back && back.querySelector("p");
+    const rn = back && back.querySelector(".rn");
+    if (!back || !p) return;
+    const closedH = parseFloat(getComputedStyle(card).getPropertyValue("--closed-h")) || 168;
+    const measure = document.createElement("div");
+    measure.className = "r-back-measure";
+    measure.style.setProperty("--measure-w", card.clientWidth + "px");
+    const cs = getComputedStyle(p);
+    measure.innerHTML =
+      '<span class="rn" style="display:block;text-align:center;margin:0 0 0.15rem;font-size:' +
+      (rn ? getComputedStyle(rn).fontSize : "0.65rem") +
+      '">' +
+      (rn ? rn.textContent : "") +
+      "</span><p style=\"margin:0;font-size:" +
+      cs.fontSize +
+      ";line-height:" +
+      cs.lineHeight +
+      ";font-weight:" +
+      cs.fontWeight +
+      ";font-family:" +
+      cs.fontFamily +
+      '">' +
+      p.textContent +
+      "</p>";
+    document.body.appendChild(measure);
+    const need = Math.ceil(measure.scrollHeight + 4);
+    measure.remove();
+    const h = Math.max(closedH, need);
+    card.style.height = h + "px";
+    card.style.minHeight = h + "px";
+  }
+  function resetCardHeight(card) {
+    card.style.height = "";
+    card.style.minHeight = "";
+  }
   rCards.forEach((card) => {
     const flip = () => {
       const open = card.classList.toggle("is-flipped");
       card.setAttribute("aria-pressed", open ? "true" : "false");
+      if (open) {
+        requestAnimationFrame(() => fitFlippedCard(card));
+      } else {
+        resetCardHeight(card);
+      }
     };
     card.addEventListener("click", flip);
     card.addEventListener("keydown", (e) => {
@@ -288,6 +330,11 @@ Happy Birthday, Jan`,
         e.preventDefault();
         flip();
       }
+    });
+  });
+  window.addEventListener("resize", () => {
+    rCards.forEach((card) => {
+      if (card.classList.contains("is-flipped")) fitFlippedCard(card);
     });
   });
 
