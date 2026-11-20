@@ -863,7 +863,7 @@ body.letter-open { overflow: hidden; }
 }
 .story-grid {
   display: grid;
-  grid-template-columns: 0.95fr 1fr 0.95fr;
+  grid-template-columns: 0.9fr 1.15fr 0.95fr;
   gap: clamp(1rem, 3vw, 2rem);
   align-items: center;
   min-height: 70vh;
@@ -964,58 +964,64 @@ body.letter-open { overflow: hidden; }
 }
 .story-right {
   position: relative;
-  min-height: 480px;
-  height: 100%;
+  min-height: 560px;
+  width: 100%;
   display: block;
-  align-self: stretch;
+  align-self: center;
+  overflow: visible;
 }
 .story-poli {
-  position: absolute;
-  width: min(172px, 46%);
-  padding: 10px 10px 14px;
+  position: absolute !important;
+  flex: none !important;
+  max-width: none !important;
+  width: 138px;
+  padding: 9px 9px 12px;
   background: #f3ebe1;
   box-shadow: 0 18px 40px rgba(0,0,0,.55);
   margin: 0;
 }
 .story-poli .poli-img { aspect-ratio: 1; }
 .story-poli figcaption {
-  margin-top: 0.55rem;
-  font-size: 1.05rem;
+  margin-top: 0.45rem;
+  font-size: 0.98rem;
   color: #4a3226;
 }
-/* Desktop scrapbook: Jan top-left, Zindagi mid-right, Ishq bottom-left */
+/* Desktop: clearly separated — Jan / Zindagi / Ishq not stacked */
 .story-poli.sp1 {
-  top: 2%;
-  left: 2%;
+  top: 8px;
+  left: 0;
   z-index: 1;
+  transform: rotate(7deg);
   animation: poliFloat1 5s ease-in-out infinite;
 }
 .story-poli.sp2 {
-  top: 22%;
-  right: 2%;
+  top: 175px;
+  right: 0;
   left: auto;
   z-index: 3;
+  transform: rotate(-9deg);
   animation: poliFloat2 5.4s ease-in-out infinite;
 }
 .story-poli.sp3 {
-  top: auto;
-  bottom: 4%;
-  left: 10%;
+  top: 350px;
+  left: 28px;
   right: auto;
+  bottom: auto;
   z-index: 2;
+  transform: rotate(5deg);
   animation: poliFloat3 4.8s ease-in-out infinite;
 }
 @keyframes poliFloat1 {
-  0%, 100% { transform: rotate(8deg) translateY(0); }
-  50% { transform: rotate(8deg) translateY(-10px); }
+  0%, 100% { transform: rotate(7deg) translateY(0); }
+  50% { transform: rotate(7deg) translateY(-8px); }
 }
 @keyframes poliFloat2 {
-  0%, 100% { transform: rotate(-10deg) translateY(0); }
-  50% { transform: rotate(-10deg) translateY(-12px); }
+  0%, 100% { transform: rotate(-9deg) translateY(0); }
+  50% { transform: rotate(-9deg) translateY(-10px); }
 }
 @keyframes poliFloat3 {
-  0%, 100% { transform: rotate(6deg) translateY(0); }
-  50% { transform: rotate(6deg) translateY(-9px); }
+  0%, 100% { transform: rotate(5deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-8px); }
 }
 @keyframes storyFadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -1031,16 +1037,16 @@ body.letter-open { overflow: hidden; }
   .story-head .script-title { white-space: normal; }
   .story-head .sub { text-align: center; }
   .story-right {
-    min-height: 340px;
+    min-height: 480px;
     margin: 0 auto;
-    width: min(300px, 92vw);
+    width: min(280px, 88vw);
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
-  .story-poli { width: min(148px, 42%); }
-  .story-poli.sp1 { left: 2%; }
-  .story-poli.sp2 { right: 2%; }
-  .story-poli.sp3 { left: 16%; }
+  .story-poli { width: 120px; }
+  .story-poli.sp1 { top: 0; left: 0; }
+  .story-poli.sp2 { top: 150px; right: 0; left: auto; }
+  .story-poli.sp3 { top: 300px; left: 24px; bottom: auto; }
 }
 
 /* WISH — wide split banner like reference */
