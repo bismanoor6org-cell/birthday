@@ -169,19 +169,18 @@
   function fitLetterToPage() {
     if (!sheetText || !letterSheet) return;
     sheetText.style.fontSize = "";
-    sheetText.style.lineHeight = "1.18";
-    let size = 11;
+    sheetText.style.lineHeight = "1.22";
+    let size = 12.5;
     sheetText.style.fontSize = size + "px";
     let guard = 80;
-    while (sheetText.scrollHeight > sheetText.clientHeight && size > 6.5 && guard--) {
-      size -= 0.15;
+    while (sheetText.scrollHeight > sheetText.clientHeight && size > 8 && guard--) {
+      size -= 0.12;
       sheetText.style.fontSize = size + "px";
     }
-    // If still overflowing, tighten line-height a bit more
     if (sheetText.scrollHeight > sheetText.clientHeight) {
-      sheetText.style.lineHeight = "1.12";
+      sheetText.style.lineHeight = "1.16";
       guard = 40;
-      while (sheetText.scrollHeight > sheetText.clientHeight && size > 6 && guard--) {
+      while (sheetText.scrollHeight > sheetText.clientHeight && size > 7.2 && guard--) {
         size -= 0.1;
         sheetText.style.fontSize = size + "px";
       }

@@ -407,8 +407,8 @@ button { font: inherit; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: clamp(0.75rem, 1.6vw, 1.1rem) clamp(0.9rem, 2.4vw, 1.5rem) clamp(0.7rem, 1.6vw, 1rem);
-  color: #3a2418;
+  padding: clamp(1.15rem, 2.4vw, 1.55rem) clamp(1.25rem, 3.2vw, 2rem) clamp(1.1rem, 2.2vw, 1.5rem);
+  color: #24160f;
   background-color: #e8dcc4;
   background-image: url("images/letter-vintage.jpg");
   background-size: cover;
@@ -425,7 +425,7 @@ button { font: inherit; }
     98% 100%, 2% 100%,
     0% 92%, 0.8% 80%, 0% 65%, 1% 50%, 0% 35%, 0.8% 20%, 0% 10%, 0% 2%
   );
-  filter: sepia(0.12) contrast(1.04) saturate(0.95);
+  filter: sepia(0.06) contrast(1.08) saturate(0.92);
   animation: letterRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .letter-full::before {
@@ -454,14 +454,14 @@ button { font: inherit; }
   height: 100%;
   overflow: hidden;
   font-family: var(--serif);
-  font-size: clamp(0.55rem, 1.05vw, 0.72rem);
-  font-weight: 600;
-  line-height: 1.16;
+  font-size: clamp(0.62rem, 1.15vw, 0.8rem);
+  font-weight: 700;
+  line-height: 1.2;
   white-space: pre-wrap;
-  color: #2e1c14;
+  color: #1a100c;
   text-shadow:
-    0 1px 0 rgba(255, 245, 220, 0.2),
-    0.4px 0.6px 0 rgba(80, 40, 20, 0.14);
+    0 0 1px rgba(255, 248, 230, 0.55),
+    0.5px 0.5px 0 rgba(255, 245, 220, 0.35);
 }
 .sheet-x {
   position: absolute; top: 0.65rem; right: 0.85rem;
