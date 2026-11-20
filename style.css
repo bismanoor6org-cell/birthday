@@ -5,7 +5,7 @@
   --champagne: #c9a66b;
   --ivory: #f4e8df;
   --rose: #a64b5b;
-  --serif: "Cormorant Garamond", Georgia, serif;
+  --serif: "Cormorant Garamond", "Times New Roman", Times, Georgia, serif;
   --script: "Great Vibes", cursive;
   --sans: "Inter", system-ui, sans-serif;
 }
@@ -453,16 +453,19 @@ button { font: inherit; }
   min-height: 0;
   height: 100%;
   overflow: hidden;
-  font-family: var(--serif);
+  font-family: "Times New Roman", Times, Georgia, serif;
   font-size: clamp(0.62rem, 1.15vw, 0.8rem);
   font-weight: 700;
   line-height: 1.2;
   white-space: pre-wrap;
   color: #1a100c;
+  opacity: 1;
+  transition: opacity 0.25s ease;
   text-shadow:
     0 0 1px rgba(255, 248, 230, 0.55),
     0.5px 0.5px 0 rgba(255, 245, 220, 0.35);
 }
+.sheet-text.is-fitting { opacity: 0; }
 .sheet-x {
   position: absolute; top: 0.65rem; right: 0.85rem;
   z-index: 3;

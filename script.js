@@ -186,34 +186,32 @@
       }
     }
   }
-  function typeLetter() {
+  // One stable font size — no typewriter size jump
+  function showLetter() {
     if (typeTimer) clearTimeout(typeTimer);
-    typing = true;
+    typing = false;
+    sheetText.classList.add("is-fitting");
     sheetText.style.fontSize = "";
-    sheetText.textContent = "";
-    let i = 0;
-    const text = CONTENT.letter;
-    (function tick() {
-      if (!typing) return;
-      if (i >= text.length) {
-        typing = false;
-        fitLetterToPage();
-        return;
-      }
-      const chunk = Math.min(28, text.length - i);
-      sheetText.textContent += text.slice(i, i + chunk);
-      i += chunk;
-      typeTimer = setTimeout(tick, 2);
-    })();
+    sheetText.textContent = CONTENT.letter;
+    requestAnimationFrame(() => {
+      fitLetterToPage();
+      requestAnimationFrame(() => sheetText.classList.remove("is-fitting"));
+    });
   }
 
   function openLetterModal() {
     letterModal.hidden = false;
     letterModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("letter-open");
-    typeLetter();
+    showLetter();
     burstPetals(10);
   }
+
+  // Preload letter paper early so open is instant
+  ["images/letter-vintage.jpg", "images/letter-desk.jpg"].forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
 
   function closeLetterModal() {
     letterModal.hidden = true;
