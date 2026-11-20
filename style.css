@@ -778,22 +778,23 @@ body.letter-open { overflow: hidden; }
 }
 .r-teaser {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.25;
+  padding: 0 0.2rem;
   color: #f4ebe3;
 }
 .r-back p {
   margin: 0;
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   min-height: 0;
-  font-size: 0.7rem;
+  font-size: 0.58rem;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.26;
   letter-spacing: 0;
   color: rgba(244, 232, 223, 0.95);
   text-align: left;
-  overflow: visible;
+  overflow: hidden;
   display: block;
   -webkit-line-clamp: unset;
 }
