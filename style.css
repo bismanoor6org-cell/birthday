@@ -997,8 +997,8 @@ body.letter-open { overflow: hidden; }
   animation: poliFloat1 5s ease-in-out infinite;
 }
 .story-poli.sp2 {
-  top: 78px;
-  left: 118px;
+  top: 62px;
+  left: 128px;
   right: auto;
   z-index: 3;
   transform: rotate(-8deg);
@@ -1047,7 +1047,7 @@ body.letter-open { overflow: hidden; }
   }
   .story-poli { width: 122px; }
   .story-poli.sp1 { top: 10px; left: 4px; }
-  .story-poli.sp2 { top: 68px; left: 100px; right: auto; }
+  .story-poli.sp2 { top: 54px; left: 108px; right: auto; }
   .story-poli.sp3 { top: 155px; left: 24px; bottom: auto; }
 }
 
