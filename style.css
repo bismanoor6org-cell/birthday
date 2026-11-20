@@ -964,9 +964,9 @@ body.letter-open { overflow: hidden; }
 }
 .story-right {
   position: relative;
-  min-height: 380px;
-  width: 100%;
-  max-width: 280px;
+  min-height: 300px;
+  width: 240px;
+  max-width: 100%;
   margin-inline: auto;
   display: block;
   align-self: center;
@@ -976,37 +976,37 @@ body.letter-open { overflow: hidden; }
   position: absolute !important;
   flex: none !important;
   max-width: none !important;
-  width: 142px;
-  padding: 9px 9px 12px;
+  width: 132px;
+  padding: 8px 8px 11px;
   background: #f3ebe1;
-  box-shadow: 0 18px 40px rgba(0,0,0,.55);
+  box-shadow: 0 14px 32px rgba(0,0,0,.55);
   margin: 0;
 }
 .story-poli .poli-img { aspect-ratio: 1; }
 .story-poli figcaption {
-  margin-top: 0.45rem;
-  font-size: 0.98rem;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
   color: #4a3226;
 }
-/* Tight scrapbook cluster — close but readable */
+/* Overlapping scrapbook pile — close together */
 .story-poli.sp1 {
-  top: 18px;
-  left: 8px;
+  top: 28px;
+  left: 12px;
   z-index: 1;
-  transform: rotate(7deg);
+  transform: rotate(8deg);
   animation: poliFloat1 5s ease-in-out infinite;
 }
 .story-poli.sp2 {
-  top: 88px;
-  right: 4px;
-  left: auto;
+  top: 58px;
+  left: 88px;
+  right: auto;
   z-index: 3;
-  transform: rotate(-9deg);
+  transform: rotate(-10deg);
   animation: poliFloat2 5.4s ease-in-out infinite;
 }
 .story-poli.sp3 {
-  top: 198px;
-  left: 22px;
+  top: 138px;
+  left: 36px;
   right: auto;
   bottom: auto;
   z-index: 2;
@@ -1039,16 +1039,16 @@ body.letter-open { overflow: hidden; }
   .story-head .script-title { white-space: normal; }
   .story-head .sub { text-align: center; }
   .story-right {
-    min-height: 340px;
+    min-height: 270px;
     margin: 0 auto;
-    width: min(250px, 88vw);
+    width: 220px;
     max-width: 100%;
     overflow: visible;
   }
   .story-poli { width: 118px; }
-  .story-poli.sp1 { top: 10px; left: 6px; }
-  .story-poli.sp2 { top: 72px; right: 2px; left: auto; }
-  .story-poli.sp3 { top: 168px; left: 18px; bottom: auto; }
+  .story-poli.sp1 { top: 20px; left: 8px; }
+  .story-poli.sp2 { top: 48px; left: 78px; right: auto; }
+  .story-poli.sp3 { top: 118px; left: 30px; bottom: auto; }
 }
 
 /* WISH — wide split banner like reference */
