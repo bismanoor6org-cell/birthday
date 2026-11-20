@@ -5,25 +5,7 @@
    * Do not invent real personal milestones — replace placeholders with your dates.
    */
   const CONTENT = {
-    letter: `My Dearest Safi,
-Sab se pehle thank you — ke aap meri zindagi ka hissa bane, mera shohar bane.
-Main dua karti hoon jaldi aap mujh se nikah kar lein. Aameen.
-Aaj aapka birthday hai, aur aapki zindagi ka special din.
-Mujhe nahi samajh aa raha ke main aapka din kaise special karoon, lekin ek chhoti si koshish ki hai.
-I love you, Safi.
-Aap is duniya ke behtareen insaan hain — mere liye Allah Pak ka diya behtareen tohfa hain.
-Aur main Allah ka dil se shukar ada karti hoon ke Allah ne mujhe aapse nawaza. Alhamdulillah — jitna shukar ada kar loon, kam hai. Be-shak.
-Aap mere liye hero hain — the way aap meri care karte ho, mujh se mohabbat karte ho, jaise mehnat karte ho, parents ka khayal rakhte ho, har kaam zimmedari se karte ho — aap mere superhero ho.
-Jaise superhero har kaam karta hai, aap bilkul waisa hi ho — sachcha, imandaar, naik dil. MashaAllah.
-Maine aaj tak kisi ko nahi kaha: mere liye aap mere husband aur mere superhero ho.
-Aap mera sab kuch ho, aur main aapse behad mohabbat karti hoon.
-Mera sab kuch tum ho — I love you sooo soo much.
-Allah aapko bohot kamyabi de, bohot khushiyan de, bohot achhi sehat de, aur jab tak main zinda hoon mere sar par aapka saya salamat rakhe. Aameen.
-Hamesha hum dono ko ek saath khush rakhe; hum dono mein mohabbat kabhi kam na ho, hamara darmiyan kabhi koi teesra na aaye. Aameen.
-Agar koi teesra aaye to woh hamari aulaad ho. Aameen.
-I love you, hero — samajh nahi aa raha kya likhoon… bas yeh ke tum mere ho, aur mere sajde ki pehli dua ho.
-I love you Safi ❤️
-Happy Birthday, Jan`,
+    letter: "My Dearest Safi, My Love, My Forever Hero ❤️\n\nSab se pehle, thank you for becoming such a beautiful part of my life. Thank you for being my person, my happiness, and the one I pray to spend the rest of my life with. I pray that very soon Allah Pak blesses us with Nikah, and I get to call you my husband not just in my duas, but in every moment of my life. Aameen Summa Aameen. ❤️\n\nToday is your birthday, your special day, and honestly, I don't know how to make it as special as you deserve. I wish I could put all my love into a little gift and hand it over to you. Since I can't do that, here's a little piece of my heart, just for you.\n\nI love you, Safi. More than words could ever explain.\n\nYou are one of the most beautiful blessings Allah has given me. Sometimes I just sit and think about how lucky I am to have you in my life, and all I can say is Alhamdulillah. No matter how many times I thank Allah for you, it will never be enough.\n\nYou are my hero, my real-life superhero. Not because you have superpowers, but because of the person you are. The way you care for me, the way you show your love, your hard work, your responsibilities, the way you look after your parents, and how you try to manage everything with such sincerity. I admire all these little things about you. Your honesty, your kind heart, your efforts and your beautiful soul make me fall for you again and again. MashaAllah. ❤️\n\nI hope you know that I don't just love you; I respect you, admire you, and feel so proud of you. You are the man I want to stand beside, support, encourage, and love through every chapter of life. On your best days, your difficult days, your achievements and your struggles, I want to be the person who never stops choosing you.\n\nAnd Safi, I have so many little dreams with you. I want to celebrate your birthdays while sitting right beside you, wake up next to you, make your favourite food, annoy you with my endless calls, steal your attention, hold your hand, and make ordinary days feel special. I want to celebrate Eid with you, travel with you, make memories with you, and grow old with you.\n\nI pray that next year, when your birthday comes around, I get to celebrate it as your wife, with your Mama and Baba, all of us together. I don't want any of your happiness to be incomplete. I want to be part of your celebrations, your achievements, your little joys and every beautiful moment of your life.\n\nMy birthday duas for you:\n\nMay Allah bless you with endless success, happiness, good health, rizq, peace and barakah. May every sincere dream of yours come true. May Allah protect you from every difficulty, every evil eye and every sadness. May He always keep that beautiful smile on your face.\n\nAnd one special dua for us: May Allah keep us together in the most beautiful way. May our love grow stronger with every passing year. May we always find comfort in each other, understand each other, and never let anything come between us. May our relationship always be filled with loyalty, respect, patience and endless love.\n\nAnd if a third person ever becomes part of our little world, I pray it's our beautiful little family and our children. Aameen. 🥹❤️\n\nI don't know what the future holds, but I know what I pray for every day. I pray for you, for us, and for a lifetime where I get to love you as your wife.\n\nYou are my favourite person, my answered prayer in the making, my biggest admiration and the one who holds such a special place in my heart.\n\nI love you beyond these words, beyond this letter, and beyond what I could ever express.\n\nHappy Birthday, My Hero, My Love, My Safi.",
     milestones: [
       { icon: "🤝", date: "10 December 2025", caption: "Aapka first text aaya tha." },
       { icon: "💍", date: "20 December 2025", caption: "Tumne mujhe propose kiya." },
@@ -108,7 +90,9 @@ Happy Birthday, Jan`,
   async function startMusic() {
     if (userStopped) return false;
     try {
+      song.muted = false;
       song.volume = 0.85;
+      song.currentTime = song.currentTime || 0;
       await song.play();
       setMusicUI(true);
       return true;
@@ -185,25 +169,22 @@ Happy Birthday, Jan`,
   function fitLetterToPage() {
     if (!sheetText || !letterSheet) return;
     sheetText.style.fontSize = "";
-    sheetText.style.lineHeight = "1.28";
-    const base = parseFloat(getComputedStyle(sheetText).fontSize) || 14;
-    let size = Math.max(base, 13);
+    sheetText.style.lineHeight = "1.18";
+    let size = 11;
     sheetText.style.fontSize = size + "px";
-    let guard = 60;
-    // Grow until almost fills the page (leave tiny bottom margin)
-    while (
-      sheetText.scrollHeight < sheetText.clientHeight * 0.94 &&
-      size < 18 &&
-      guard--
-    ) {
-      size += 0.2;
+    let guard = 80;
+    while (sheetText.scrollHeight > sheetText.clientHeight && size > 6.5 && guard--) {
+      size -= 0.15;
       sheetText.style.fontSize = size + "px";
     }
-    guard = 60;
-    // Shrink if anything overflows
-    while (sheetText.scrollHeight > sheetText.clientHeight && size > 9 && guard--) {
-      size -= 0.2;
-      sheetText.style.fontSize = size + "px";
+    // If still overflowing, tighten line-height a bit more
+    if (sheetText.scrollHeight > sheetText.clientHeight) {
+      sheetText.style.lineHeight = "1.12";
+      guard = 40;
+      while (sheetText.scrollHeight > sheetText.clientHeight && size > 6 && guard--) {
+        size -= 0.1;
+        sheetText.style.fontSize = size + "px";
+      }
     }
   }
   function typeLetter() {
@@ -220,10 +201,10 @@ Happy Birthday, Jan`,
         fitLetterToPage();
         return;
       }
-      const chunk = Math.min(6, text.length - i);
+      const chunk = Math.min(28, text.length - i);
       sheetText.textContent += text.slice(i, i + chunk);
       i += chunk;
-      typeTimer = setTimeout(tick, 6);
+      typeTimer = setTimeout(tick, 2);
     })();
   }
 

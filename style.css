@@ -401,13 +401,13 @@ button { font: inherit; }
 }
 .letter-full {
   position: relative; z-index: 2;
-  width: min(680px, 94vw);
-  height: min(88vh, 780px);
-  max-height: 88vh;
+  width: min(760px, 96vw);
+  height: min(94vh, 920px);
+  max-height: 94vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: clamp(1.1rem, 2.2vw, 1.45rem) clamp(1.15rem, 3vw, 1.9rem) clamp(1rem, 2.2vw, 1.4rem);
+  padding: clamp(0.75rem, 1.6vw, 1.1rem) clamp(0.9rem, 2.4vw, 1.5rem) clamp(0.7rem, 1.6vw, 1rem);
   color: #3a2418;
   background-color: #e8dcc4;
   background-image: url("images/letter-vintage.jpg");
@@ -454,9 +454,9 @@ button { font: inherit; }
   height: 100%;
   overflow: hidden;
   font-family: var(--serif);
-  font-size: clamp(0.78rem, 1.55vw, 0.98rem);
+  font-size: clamp(0.55rem, 1.05vw, 0.72rem);
   font-weight: 600;
-  line-height: 1.28;
+  line-height: 1.16;
   white-space: pre-wrap;
   color: #2e1c14;
   text-shadow:
