@@ -67,7 +67,7 @@ button { font: inherit; }
 .nav-links {
   display: flex; gap: clamp(.85rem, 2vw, 1.75rem);
   font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
-  color: rgba(244,232,223,.7);
+  color: rgba(244,232,223,.86);
 }
 .nav-links a:hover, .nav-links a.active { color: var(--champagne); }
 .nav-actions { display: flex; gap: .5rem; align-items: center; }
@@ -129,7 +129,7 @@ button { font: inherit; }
 .script-title span, .heart { color: var(--champagne); }
 .sub {
   margin-top: .6rem; font-family: var(--serif); font-style: italic;
-  color: rgba(244,232,223,.7); font-size: 1.1rem;
+  color: rgba(244,232,223,.88); font-size: 1.1rem;
 }
 .btn-outline {
   position: relative;
@@ -660,7 +660,7 @@ body.letter-open { overflow: hidden; }
   font-family: var(--sans);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
-  color: rgba(244, 232, 223, 0.55);
+  color: rgba(244, 232, 223, 0.78);
 }
 .reasons-grid {
   display: grid;
@@ -887,7 +887,7 @@ body.letter-open { overflow: hidden; }
   color: #e8c98a;
 }
 .story-head .sub {
-  color: rgba(244,232,223,.88);
+  color: rgba(255, 248, 240, 0.95);
   text-align: left;
   margin-top: 0.5rem;
   font-family: var(--serif);
@@ -902,7 +902,7 @@ body.letter-open { overflow: hidden; }
   font-style: italic;
   font-size: clamp(1.05rem, 2.4vw, 1.25rem);
   line-height: 1.55;
-  color: rgba(255, 244, 230, 0.92);
+  color: rgba(255, 248, 240, 0.96);
   text-shadow: 0 4px 18px rgba(0,0,0,.45);
 }
 .timeline {
@@ -952,7 +952,7 @@ body.letter-open { overflow: hidden; }
 .t-item p {
   font-family: var(--serif);
   font-style: italic;
-  color: rgba(244,232,223,.8);
+  color: rgba(255, 248, 240, 0.94);
   font-size: 1rem;
 }
 .t-item .hint {
@@ -1271,7 +1271,7 @@ body.letter-open { overflow: hidden; }
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(1rem, 2.2vw, 1.2rem);
-  color: rgba(244, 232, 223, 0.88);
+  color: rgba(255, 248, 240, 0.95);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 .forever-heading {
@@ -1291,7 +1291,7 @@ body.letter-open { overflow: hidden; }
   font-family: var(--serif);
   font-size: clamp(0.92rem, 1.9vw, 1.08rem);
   font-style: italic;
-  color: rgba(244, 232, 223, 0.94);
+  color: rgba(255, 248, 240, 0.97);
   line-height: 1.55;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
@@ -1299,7 +1299,7 @@ body.letter-open { overflow: hidden; }
   margin-top: 1.35rem;
   font-family: var(--serif);
   font-size: 1.05rem;
-  color: rgba(244, 232, 223, 0.9);
+  color: rgba(255, 248, 240, 0.96);
   line-height: 1.45;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
@@ -1308,7 +1308,7 @@ body.letter-open { overflow: hidden; }
   font-family: var(--serif);
   font-size: clamp(0.95rem, 2vw, 1.12rem);
   font-style: italic;
-  color: rgba(244, 232, 223, 0.92);
+  color: rgba(255, 248, 240, 0.96);
   line-height: 1.55;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
