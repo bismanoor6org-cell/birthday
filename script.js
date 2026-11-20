@@ -265,7 +265,12 @@
     const back = card.querySelector(".r-back");
     const p = back && back.querySelector("p");
     if (!back || !p) return;
-    // Keep card size fixed — shrink text until full content fits
+    // Keep the open fitted size — do not jump back to larger CSS size
+    if (p.dataset.fitSize) {
+      p.style.fontSize = p.dataset.fitSize;
+      p.style.lineHeight = p.dataset.fitLh || "1.28";
+      return;
+    }
     p.style.fontSize = "";
     p.style.lineHeight = "1.28";
     let size = parseFloat(getComputedStyle(p).fontSize) || 11;
@@ -282,13 +287,8 @@
         p.style.fontSize = size + "px";
       }
     }
-  }
-  function resetCardHeight(card) {
-    const p = card.querySelector(".r-back p");
-    if (p) {
-      p.style.fontSize = "";
-      p.style.lineHeight = "";
-    }
+    p.dataset.fitSize = size + "px";
+    p.dataset.fitLh = p.style.lineHeight || "1.28";
   }
   rCards.forEach((card) => {
     const flip = () => {
@@ -296,9 +296,8 @@
       card.setAttribute("aria-pressed", open ? "true" : "false");
       if (open) {
         requestAnimationFrame(() => fitFlippedCard(card));
-      } else {
-        resetCardHeight(card);
       }
+      // On close: keep fitted font size (do not reset — was growing on mobile)
     };
     card.addEventListener("click", flip);
     card.addEventListener("keydown", (e) => {
@@ -310,6 +309,11 @@
   });
   window.addEventListener("resize", () => {
     rCards.forEach((card) => {
+      const p = card.querySelector(".r-back p");
+      if (p) {
+        delete p.dataset.fitSize;
+        delete p.dataset.fitLh;
+      }
       if (card.classList.contains("is-flipped")) fitFlippedCard(card);
     });
   });
