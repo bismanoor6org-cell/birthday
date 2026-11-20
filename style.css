@@ -964,8 +964,10 @@ body.letter-open { overflow: hidden; }
 }
 .story-right {
   position: relative;
-  min-height: 560px;
+  min-height: 380px;
   width: 100%;
+  max-width: 280px;
+  margin-inline: auto;
   display: block;
   align-self: center;
   overflow: visible;
@@ -974,7 +976,7 @@ body.letter-open { overflow: hidden; }
   position: absolute !important;
   flex: none !important;
   max-width: none !important;
-  width: 138px;
+  width: 142px;
   padding: 9px 9px 12px;
   background: #f3ebe1;
   box-shadow: 0 18px 40px rgba(0,0,0,.55);
@@ -986,25 +988,25 @@ body.letter-open { overflow: hidden; }
   font-size: 0.98rem;
   color: #4a3226;
 }
-/* Desktop: clearly separated — Jan / Zindagi / Ishq not stacked */
+/* Tight scrapbook cluster — close but readable */
 .story-poli.sp1 {
-  top: 8px;
-  left: 0;
+  top: 18px;
+  left: 8px;
   z-index: 1;
   transform: rotate(7deg);
   animation: poliFloat1 5s ease-in-out infinite;
 }
 .story-poli.sp2 {
-  top: 175px;
-  right: 0;
+  top: 88px;
+  right: 4px;
   left: auto;
   z-index: 3;
   transform: rotate(-9deg);
   animation: poliFloat2 5.4s ease-in-out infinite;
 }
 .story-poli.sp3 {
-  top: 350px;
-  left: 28px;
+  top: 198px;
+  left: 22px;
   right: auto;
   bottom: auto;
   z-index: 2;
@@ -1037,16 +1039,16 @@ body.letter-open { overflow: hidden; }
   .story-head .script-title { white-space: normal; }
   .story-head .sub { text-align: center; }
   .story-right {
-    min-height: 480px;
+    min-height: 340px;
     margin: 0 auto;
-    width: min(280px, 88vw);
+    width: min(250px, 88vw);
     max-width: 100%;
     overflow: visible;
   }
-  .story-poli { width: 120px; }
-  .story-poli.sp1 { top: 0; left: 0; }
-  .story-poli.sp2 { top: 150px; right: 0; left: auto; }
-  .story-poli.sp3 { top: 300px; left: 24px; bottom: auto; }
+  .story-poli { width: 118px; }
+  .story-poli.sp1 { top: 10px; left: 6px; }
+  .story-poli.sp2 { top: 72px; right: 2px; left: auto; }
+  .story-poli.sp3 { top: 168px; left: 18px; bottom: auto; }
 }
 
 /* WISH — wide split banner like reference */
