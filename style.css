@@ -964,8 +964,8 @@ body.letter-open { overflow: hidden; }
 }
 .story-right {
   position: relative;
-  min-height: 300px;
-  width: 240px;
+  min-height: 360px;
+  width: 280px;
   max-width: 100%;
   margin-inline: auto;
   display: block;
@@ -976,54 +976,54 @@ body.letter-open { overflow: hidden; }
   position: absolute !important;
   flex: none !important;
   max-width: none !important;
-  width: 132px;
-  padding: 8px 8px 11px;
+  width: 138px;
+  padding: 9px 9px 12px;
   background: #f3ebe1;
-  box-shadow: 0 14px 32px rgba(0,0,0,.55);
+  box-shadow: 0 16px 36px rgba(0,0,0,.55);
   margin: 0;
 }
 .story-poli .poli-img { aspect-ratio: 1; }
 .story-poli figcaption {
-  margin-top: 0.4rem;
-  font-size: 0.95rem;
+  margin-top: 0.45rem;
+  font-size: 1rem;
   color: #4a3226;
 }
-/* Overlapping scrapbook pile — close together */
+/* Match reference: Jan top-left, Zindagi mid-right, Ishq bottom — slight overlap */
 .story-poli.sp1 {
-  top: 28px;
-  left: 12px;
+  top: 12px;
+  left: 4px;
   z-index: 1;
-  transform: rotate(8deg);
+  transform: rotate(6deg);
   animation: poliFloat1 5s ease-in-out infinite;
 }
 .story-poli.sp2 {
-  top: 58px;
-  left: 88px;
+  top: 78px;
+  left: 118px;
   right: auto;
   z-index: 3;
-  transform: rotate(-10deg);
+  transform: rotate(-8deg);
   animation: poliFloat2 5.4s ease-in-out infinite;
 }
 .story-poli.sp3 {
-  top: 138px;
-  left: 36px;
+  top: 178px;
+  left: 28px;
   right: auto;
   bottom: auto;
   z-index: 2;
-  transform: rotate(5deg);
+  transform: rotate(4deg);
   animation: poliFloat3 4.8s ease-in-out infinite;
 }
 @keyframes poliFloat1 {
-  0%, 100% { transform: rotate(7deg) translateY(0); }
-  50% { transform: rotate(7deg) translateY(-8px); }
+  0%, 100% { transform: rotate(6deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(-6px); }
 }
 @keyframes poliFloat2 {
-  0%, 100% { transform: rotate(-9deg) translateY(0); }
-  50% { transform: rotate(-9deg) translateY(-10px); }
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50% { transform: rotate(-8deg) translateY(-8px); }
 }
 @keyframes poliFloat3 {
-  0%, 100% { transform: rotate(5deg) translateY(0); }
-  50% { transform: rotate(5deg) translateY(-8px); }
+  0%, 100% { transform: rotate(4deg) translateY(0); }
+  50% { transform: rotate(4deg) translateY(-6px); }
 }
 @keyframes storyFadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -1039,16 +1039,16 @@ body.letter-open { overflow: hidden; }
   .story-head .script-title { white-space: normal; }
   .story-head .sub { text-align: center; }
   .story-right {
-    min-height: 270px;
+    min-height: 320px;
     margin: 0 auto;
-    width: 220px;
+    width: 250px;
     max-width: 100%;
     overflow: visible;
   }
-  .story-poli { width: 118px; }
-  .story-poli.sp1 { top: 20px; left: 8px; }
-  .story-poli.sp2 { top: 48px; left: 78px; right: auto; }
-  .story-poli.sp3 { top: 118px; left: 30px; bottom: auto; }
+  .story-poli { width: 122px; }
+  .story-poli.sp1 { top: 10px; left: 4px; }
+  .story-poli.sp2 { top: 68px; left: 100px; right: auto; }
+  .story-poli.sp3 { top: 155px; left: 24px; bottom: auto; }
 }
 
 /* WISH — wide split banner like reference */
