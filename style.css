@@ -466,6 +466,18 @@ button { font: inherit; }
     0.5px 0.5px 0 rgba(255, 245, 220, 0.35);
 }
 .sheet-text.is-fitting { opacity: 0; }
+/* Keep letter ink black when phone dark mode tries to invert page text */
+@media (prefers-color-scheme: dark) {
+  .letter-full {
+    color-scheme: light;
+    color: #1a100c;
+  }
+  .sheet-text {
+    color: #000 !important;
+    -webkit-text-fill-color: #000;
+    text-shadow: none;
+  }
+}
 .sheet-x {
   position: absolute; top: 0.65rem; right: 0.85rem;
   z-index: 3;
